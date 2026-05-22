@@ -726,14 +726,11 @@ function MembershipView({ billing, setBilling, inCart, toggleItem, onShowBreakdo
           ))}
         </div>
 
-        <p className="mt-8 text-center text-xs uppercase tracking-widest muted max-w-2xl mx-auto">
-          All memberships include 24/7 access to your personal AI wellness companion and discounts on additional tests, supplements & scripts
-        </p>
       </section>
 
       {/* ─── NOT SURE WHERE TO START? — Discover Package entry point ─── */}
-      <section>
-        <SectionHeader centered eyebrow="Most Popular Starting Point" title="Not Sure Where to Start?" description="Start with the Discover Package — a full lab panel plus a clinician consult so you can pick the membership tier that fits. Credit toward a membership if you upgrade within 30 days." />
+      <section className="-mt-12">
+        <SectionHeader centered title="Not Sure Where to Start?" />
         <div className="mt-8 dark-card p-5 sm:p-8 relative overflow-hidden">
           {/* subtle cyan glow corner */}
           <div className="absolute -top-32 -right-32 w-64 h-64 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(52, 180, 244, 0.18), transparent 70%)" }} />
@@ -741,6 +738,9 @@ function MembershipView({ billing, setBilling, inCart, toggleItem, onShowBreakdo
           <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 sm:gap-8 relative">
             {/* LEFT: pricing block */}
             <div className="sm:col-span-5 min-w-0">
+              <div className="inline-block mb-4 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-[0.2em]" style={{ background: "rgba(52, 180, 244, 0.15)", color: "#34b4f4", border: "1px solid rgba(52, 180, 244, 0.35)" }}>
+                Most Popular Starting Point
+              </div>
               <div className="mb-4">
                 <W2WLogo height={18} gap={5} />
               </div>
