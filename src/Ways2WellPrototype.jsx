@@ -296,7 +296,7 @@ const formatPrice = (n) =>
 // ─────────────────────────────────────────────────────────────────────────────
 
 export default function Ways2WellPrototype() {
-  const [activeTab, setActiveTab] = useState("alacarte");
+  const [activeTab, setActiveTab] = useState("membership");
   const [billing, setBilling] = useState("monthly");
   const [cart, setCart] = useState([]);
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -729,6 +729,71 @@ function MembershipView({ billing, setBilling, inCart, toggleItem, onShowBreakdo
         <p className="mt-8 text-center text-xs uppercase tracking-widest muted max-w-2xl mx-auto">
           All memberships include 24/7 access to your personal AI wellness companion and discounts on additional tests, supplements & scripts
         </p>
+      </section>
+
+      {/* ─── NOT SURE WHERE TO START? — Discover Package entry point ─── */}
+      <section>
+        <SectionHeader centered eyebrow="Most Popular Starting Point" title="Not Sure Where to Start?" description="Start with the Discover Package — a full lab panel plus a clinician consult so you can pick the membership tier that fits. Credit toward a membership if you upgrade within 30 days." />
+        <div className="mt-8 dark-card p-5 sm:p-8 relative overflow-hidden">
+          {/* subtle cyan glow corner */}
+          <div className="absolute -top-32 -right-32 w-64 h-64 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(52, 180, 244, 0.18), transparent 70%)" }} />
+
+          <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 sm:gap-8 relative">
+            {/* LEFT: pricing block */}
+            <div className="sm:col-span-5 min-w-0">
+              <div className="mb-4">
+                <W2WLogo height={18} gap={5} />
+              </div>
+              <h3 className="display-heading display-white leading-tight" style={{ fontSize: "clamp(22px, 3vw, 36px)" }}>
+                Discover<br />Package
+              </h3>
+              <div className="mt-5">
+                <div className="flex items-baseline gap-2 flex-wrap">
+                  <span className="display-heading" style={{ fontSize: "clamp(32px, 4vw, 48px)", color: "#34b4f4" }}>$499</span>
+                  <span className="display-white font-black uppercase tracking-widest" style={{ fontSize: "clamp(9px, 0.9vw, 11px)" }}>One-time</span>
+                </div>
+                <div className="mt-2 muted" style={{ fontSize: "clamp(11px, 1vw, 13px)" }}>
+                  Includes lab panel + <span style={{ color: "#34b4f4" }}>45-minute</span> clinician consult
+                </div>
+              </div>
+              <button
+                onClick={() =>
+                  toggleItem({
+                    type: "discover",
+                    id: "discover",
+                    name: DISCOVER.name,
+                    price: DISCOVER.price,
+                    meta: DISCOVER.subtitle,
+                  })
+                }
+                className="mt-6 pill-cta"
+                style={inCart("discover", "discover") ? { backgroundColor: "rgba(52, 180, 244, 0.15)", color: "#34b4f4", border: "1.5px solid #34b4f4" } : {}}
+              >
+                {inCart("discover", "discover") ? <><Check className="w-4 h-4" /> Added</> : <>Add Discover <ArrowRight className="w-4 h-4" /></>}
+              </button>
+            </div>
+
+            {/* RIGHT: feature checklist */}
+            <div className="sm:col-span-7 min-w-0">
+              <ul className="space-y-3">
+                {[
+                  "Full comprehensive blood panel — 70+ biomarkers",
+                  "45-minute one-on-one clinician video consultation",
+                  "Personalized roadmap, no commitment",
+                  "Credit toward a membership if you upgrade within 30 days",
+                  "Interactive digital review of your results",
+                  "Access to prescriptions, peptides & supplements",
+                  "24/7 access to your personal AI wellness companion",
+                ].map((t) => (
+                  <li key={t} className="flex items-start gap-2.5">
+                    <Check className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "#34b4f4" }} strokeWidth={3} />
+                    <span className="font-bold uppercase tracking-wider display-white leading-snug" style={{ letterSpacing: "0.04em", fontSize: "clamp(10px, 1vw, 13px)" }}>{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* ─── WHAT SETS MEMBERSHIP APART (centered, full width) ─── */}
