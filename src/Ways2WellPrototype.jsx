@@ -457,17 +457,6 @@ export default function Ways2WellPrototype() {
         <div className="mt-12 flex justify-center">
           <div className="inline-flex items-center p-1.5 rounded-full" style={{ backgroundColor: "#0d0f15", border: "1px solid rgba(255,255,255,0.08)" }}>
             <button
-              onClick={() => setActiveTab("alacarte")}
-              className="px-6 md:px-8 py-2.5 rounded-full text-xs font-black uppercase tracking-widest transition"
-              style={
-                activeTab === "alacarte"
-                  ? { background: "#34b4f4", color: "#1a1d29" }
-                  : { background: "transparent", color: "rgba(247,243,235,0.6)" }
-              }
-            >
-              Pay As You Go
-            </button>
-            <button
               onClick={() => setActiveTab("membership")}
               className="px-6 md:px-8 py-2.5 rounded-full text-xs font-black uppercase tracking-widest transition"
               style={
@@ -477,6 +466,17 @@ export default function Ways2WellPrototype() {
               }
             >
               Membership Bundles
+            </button>
+            <button
+              onClick={() => setActiveTab("alacarte")}
+              className="px-6 md:px-8 py-2.5 rounded-full text-xs font-black uppercase tracking-widest transition"
+              style={
+                activeTab === "alacarte"
+                  ? { background: "#34b4f4", color: "#1a1d29" }
+                  : { background: "transparent", color: "rgba(247,243,235,0.6)" }
+              }
+            >
+              Pay As You Go
             </button>
           </div>
         </div>
