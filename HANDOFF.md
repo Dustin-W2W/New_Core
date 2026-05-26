@@ -69,7 +69,7 @@ IgE Allergy Explorer, IgG Food Explorer, MethylDetox, IgE/IgG Combo, Microbiome 
 
 | Tier | Monthly | Annual | PAYG Value | Annual Savings |
 |---|---|---|---|---|
-| **Core** | $69 | $690 | $1,996 | $1,306/yr |
+| **Core** | $69 | $690 | $998 | $308/yr |
 | **Transform** (Most Popular) | $199 | $1,990 | $2,280 | $290/yr |
 | **Premium** | $799 | $7,990 | $11,711 | $3,721/yr |
 

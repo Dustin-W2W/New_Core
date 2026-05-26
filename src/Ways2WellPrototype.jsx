@@ -220,13 +220,13 @@ const MEMBERSHIPS = [
     monthly: 69,
     annual: 690,
     icon: ShieldCheck,
-    paygValue: 1996,
+    paygValue: 998,
     paygBreakdown: [
-      { label: "4 Comprehensive Panels + Consults", value: 1996 },
+      { label: "2 Comprehensive Panels + Consults", value: 998 },
     ],
     features: [
-      { text: "4 × 45-MINUTE CLINICIAN CONSULTS / YEAR" },
-      { text: "4 COMPREHENSIVE LAB PANELS / YEAR" },
+      { text: "2 × 45-MINUTE CLINICIAN CONSULTS / YEAR" },
+      { text: "2 COMPREHENSIVE LAB PANELS / YEAR" },
       { text: "LAB INTERPRETATION + WELL PLAN W/ EACH VISIT", new: true },
       { text: "30% OFF SUPPLEMENTS, SCRIPTS & LAB SERVICES" },
       { text: "24/7 ACCESS TO YOUR PERSONAL AI WELLNESS COMPANION" },
