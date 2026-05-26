@@ -209,27 +209,26 @@ const ADVANCED_TESTS = [
   { id: "cancer", name: "Cancer Test", price: 2249, duration: "45 min" },
 ];
 
+// Pricing updated 2026-05-26 per COO sheet "Membership Pricing Economics 05.20.26 3.xlsx".
+// Core and Premium pulled directly from the spreadsheet; Transform interpolated (pending COO sign-off).
+// Internal ids ("maintain", "transform", "max") preserved for stable references in BreakdownModal.
 const MEMBERSHIPS = [
   {
     id: "maintain",
     name: "Core",
     tagline: "For those in good health, ready to take it to the next level.",
-    monthly: 99,
-    annual: 99 * 10,
+    monthly: 69,
+    annual: 690,
     icon: ShieldCheck,
-    paygValue: 1309,
+    paygValue: 1996,
     paygBreakdown: [
-      { label: "2 Comprehensive Panels + Consults", value: 998 },
-      { label: "1 Spot-check Panel", value: 75 },
-      { label: "4 Quarterly Coach Check-Ins", value: 236 },
+      { label: "4 Comprehensive Panels + Consults", value: 1996 },
     ],
     features: [
-      { text: "2 × 45-MINUTE CLINICIAN CONSULTS / YEAR" },
-      { text: "2 COMPREHENSIVE LAB PANELS / YEAR" },
-      { text: "1 INCLUDED SPOT-CHECK PANEL" },
+      { text: "4 × 45-MINUTE CLINICIAN CONSULTS / YEAR" },
+      { text: "4 COMPREHENSIVE LAB PANELS / YEAR" },
       { text: "LAB INTERPRETATION + WELL PLAN W/ EACH VISIT", new: true },
-      { text: "DEDICATED HEALTH COACH — QUARTERLY CHECK-IN", new: true },
-      { text: "10% OFF SUPPLEMENTS, SCRIPTS & LAB SERVICES" },
+      { text: "30% OFF SUPPLEMENTS, SCRIPTS & LAB SERVICES" },
       { text: "24/7 ACCESS TO YOUR PERSONAL AI WELLNESS COMPANION" },
     ],
   },
@@ -238,51 +237,53 @@ const MEMBERSHIPS = [
     name: "Transform",
     tagline: "For those ready to make a change and transform their health.",
     monthly: 199,
-    annual: 199 * 10,
+    annual: 1990,
     icon: Activity,
     popular: true,
-    paygValue: 2754,
+    paygValue: 2280,
     paygBreakdown: [
-      { label: "3 Comprehensive Panels + Consults", value: 1497 },
-      { label: "2 Spot-check Panels", value: 150 },
+      { label: "2 Comprehensive Panels + Consults", value: 998 },
+      { label: "1 Spot-check Panel", value: 75 },
       { label: "12 Monthly Coach Check-Ins", value: 708 },
-      { label: "$399 Advanced Test Credit", value: 399 },
+      { label: "$499 Advanced Test Credit", value: 499 },
     ],
     features: [
       { text: "4 × 45-MINUTE CLINICIAN CONSULTS / YEAR" },
-      { text: "3 COMPREHENSIVE LAB PANELS / YEAR" },
-      { text: "2 INCLUDED SPOT-CHECK PANELS" },
+      { text: "2 COMPREHENSIVE LAB PANELS / YEAR" },
+      { text: "1 INCLUDED SPOT-CHECK PANEL" },
       { text: "LAB INTERPRETATION + WELL PLAN W/ EACH VISIT", new: true },
       { text: "DEDICATED HEALTH COACH — MONTHLY CHECK-INS", new: true },
-      { text: "15% OFF SUPPLEMENTS, SCRIPTS & LAB SERVICES" },
+      { text: "30% OFF SUPPLEMENTS, SCRIPTS & LAB SERVICES" },
       { text: "24/7 ACCESS TO YOUR PERSONAL AI WELLNESS COMPANION" },
-      { text: "$399 CREDIT TOWARD AN ADVANCED STAND-ALONE TEST" },
+      { text: "$499 CREDIT TOWARD AN ADVANCED STAND-ALONE TEST" },
     ],
   },
   {
     id: "max",
-    name: "Max",
+    name: "Premium",
     tagline: "Our most intensive program — uncompromising.",
-    monthly: 449,
-    annual: 449 * 10,
+    monthly: 799,
+    annual: 7990,
     icon: Crown,
-    paygValue: 6180,
+    paygValue: 11711,
     paygBreakdown: [
       { label: "4 Comprehensive Panels + Consults", value: 1996 },
-      { label: "2 Spot-check Panels", value: 150 },
+      { label: "1 Spot-check Panel", value: 75 },
       { label: "26 Bi-Weekly Coach Check-Ins", value: 1534 },
-      { label: "$2,500 Advanced Test Credit", value: 2500 },
+      { label: "All Health Tests + Visits Bundle", value: 4106 },
+      { label: "$4,000 Advanced Test Credit", value: 4000 },
     ],
     features: [
-      { text: "6 × 45-MINUTE CLINICIAN CONSULTS / YEAR" },
+      { text: "4 × 45-MINUTE CLINICIAN CONSULTS / YEAR" },
       { text: "4 COMPREHENSIVE LAB PANELS / YEAR" },
-      { text: "2 INCLUDED SPOT-CHECK PANELS" },
+      { text: "1 INCLUDED SPOT-CHECK PANEL" },
+      { text: "ALL HEALTH TESTS + VISITS BUNDLE INCLUDED", new: true },
       { text: "LAB INTERPRETATION + WELL PLAN W/ EACH VISIT", new: true },
       { text: "DEDICATED HEALTH COACH — BI-WEEKLY CHECK-INS", new: true },
-      { text: "20% OFF SUPPLEMENTS, SCRIPTS & LAB SERVICES" },
+      { text: "30% OFF SUPPLEMENTS, SCRIPTS & LAB SERVICES" },
       { text: "24/7 ACCESS TO YOUR PERSONAL AI WELLNESS COMPANION" },
       { text: "FREE SHIPPING ON ALL ORDERS", new: true },
-      { text: "$2,500 CREDIT TOWARD ADVANCED STAND-ALONE TESTS" },
+      { text: "$4,000 CREDIT TOWARD ADVANCED STAND-ALONE TESTS" },
       { text: "PRIORITY CLINICIAN ACCESS — 7 DAYS SCHEDULING", new: true },
     ],
   },
@@ -822,16 +823,16 @@ function MembershipView({ billing, setBilling, inCart, toggleItem, onShowBreakdo
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
-            <DiscountStat icon={FlaskConical} label="Additional Labs" tiers={["10% off", "15% off", "20% off"]} />
-            <DiscountStat icon={Pill} label="Prescriptions" tiers={["10% off", "15% off", "20% off"]} />
-            <DiscountStat icon={Sparkles} label="Peptides" tiers={["10% off", "15% off", "20% off"]} />
-            <DiscountStat icon={Leaf} label="Supplements" tiers={["10% off", "15% off", "20% off"]} />
+            <DiscountStat icon={FlaskConical} label="Additional Labs" tiers={["30% off", "30% off", "30% off"]} />
+            <DiscountStat icon={Pill} label="Prescriptions" tiers={["30% off", "30% off", "30% off"]} />
+            <DiscountStat icon={Sparkles} label="Peptides" tiers={["30% off", "30% off", "30% off"]} />
+            <DiscountStat icon={Leaf} label="Supplements" tiers={["30% off", "30% off", "30% off"]} />
           </div>
 
           <div className="mt-6 flex items-center justify-center gap-2 flex-wrap">
             <Truck className="w-4 h-4" style={{ color: "#34b4f4" }} />
             <span className="text-[11px] font-black uppercase tracking-widest" style={{ color: "#34b4f4" }}>
-              Max members: free shipping on all orders
+              Premium members: free shipping on all orders
             </span>
           </div>
         </div>
@@ -1348,7 +1349,7 @@ function BreakdownModal({ membershipId, billing, onClose }) {
               <ul className="space-y-1.5">
                 {[
                   "Lab interpretation + written Well Plan with each visit",
-                  `${membership.id === "maintain" ? "10%" : membership.id === "transform" ? "15%" : "20%"} off supplements, scripts & lab services`,
+                  "30% off supplements, scripts & lab services",
                   "24/7 access to your personal AI wellness companion",
                   ...(membership.id === "max" ? ["Priority clinician access — 7 days scheduling"] : []),
                 ].map((b, i) => (
@@ -1409,7 +1410,7 @@ function DiscountStat({ icon: Icon, label, tiers }) {
       </div>
       <div className="text-[10px] font-black uppercase tracking-widest display-white mb-2">{label}</div>
       <div className="space-y-0.5">
-        {["Core", "Transform", "Max"].map((t, i) => (
+        {["Core", "Transform", "Premium"].map((t, i) => (
           <div key={t} className="flex items-center justify-between text-[10px] font-bold uppercase tracking-wider">
             <span className="muted">{t}</span>
             <span style={{ color: "#34b4f4" }}>{tiers[i]}</span>

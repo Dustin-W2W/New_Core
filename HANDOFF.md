@@ -69,9 +69,11 @@ IgE Allergy Explorer, IgG Food Explorer, MethylDetox, IgE/IgG Combo, Microbiome 
 
 | Tier | Monthly | Annual | PAYG Value | Annual Savings |
 |---|---|---|---|---|
-| **Core** | $99 | $990 | $1,309 | $319/yr |
-| **Transform** (Most Popular) | $199 | $1,990 | $2,754 | $764/yr |
-| **Max** | $449 | $4,490 | $6,180 | $1,690/yr |
+| **Core** | $69 | $690 | $1,996 | $1,306/yr |
+| **Transform** (Most Popular) | $199 | $1,990 | $2,280 | $290/yr |
+| **Premium** | $799 | $7,990 | $11,711 | $3,721/yr |
+
+> **Updated May 26, 2026** per COO sheet `Membership Pricing Economics 05.20.26 3.xlsx`. Core and Premium pulled directly from the cost-built model (39% and 34% target gross margins). Transform was **interpolated** in the middle (4 labs / 4 consults / 2 spot checks / monthly coach / $499 advanced credit) — needs COO sign-off. Supplement/Rx/Peptide/Lab discount is now a flat **30% across all tiers** (was tiered 10/15/20%). "Max" tier was renamed to **Premium** to match COO terminology. **Open item:** the COO sheet also mentions a "Maintenance Tier" for existing patients only — not yet priced or scoped, so it's omitted from the prototype.
 
 (Annual = monthly × 10, i.e. "2 months free")
 

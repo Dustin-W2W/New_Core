@@ -3,7 +3,7 @@
 An interactive prototype exploring a new offering structure for Ways2Well, organized into two clear buckets:
 
 1. **Pay As You Go** — Single-purchase services: the Discover Package, focused goal programs (Weight Loss, Hormone Optimization, Sexual Health, Skin Care, Hairloss, Cell Therapy, Health Coach Check-In), spot-check lab add-ons, and advanced stand-alone diagnostic tests.
-2. **Memberships** — Three tiers (Core, Transform, Max) with monthly or annual billing, dedicated health coaching, lab interpretation, and a transparent savings breakdown vs. paying à la carte.
+2. **Memberships** — Three tiers (Core, Transform, Premium) with monthly or annual billing, dedicated health coaching, lab interpretation, and a transparent savings breakdown vs. paying à la carte.
 
 ## Live Demo
 
